@@ -1,18 +1,36 @@
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+        url("assets/fonts/Montserrat-Regular.ttf") format("TrueType");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+        url("assets/fonts/Montserrat-Bold.ttf") format("TrueType");
+    font-weight: 800;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', 'Poppins', sans-serif;
 }
 
 body {
     background: #aa4b6b;
     background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
     background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
-
     font-size: 10px;
 }
 
+.tittle {
+    color: #6b6b83;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
 
 #accordion {
     margin: 10vh auto;
@@ -52,17 +70,36 @@ body {
 }
 
 #accordion .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 10px;
     line-height: 2rem;
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease;
+}
+
+#accordion li .content img {
+    display: block;
+    opacity: 0;
+    height: auto;
+    width: 100%;
+    max-height: 0;
+    max-width: 20rem;
+    transition: all 0.5s ease;
+    scale: 0;
 }
 
 #accordion li input[type="radio"]:checked~.content {
-    max-height: 10vh;
+    max-height: 60vh;
 }
 
 #accordion li input[type="radio"]:checked+label span {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
+}
+
+#accordion li input[type="radio"]:checked~.content img {
+    opacity: 1;
+    max-height: 100%;
+    scale: 100%;
 }
