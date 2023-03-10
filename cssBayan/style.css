@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #aa4b6b;
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+
+    font-size: 10px;
+}
+
+
+#accordion {
+    margin: 10vh auto;
+    width: 60%;
+}
+
+#accordion li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 9px 7px 15px -1px rgba(8, 35, 43, 0.59);
+    -moz-box-shadow: 9px 7px 15px -1px rgba(8, 35, 43, 0.59);
+    box-shadow: 9px 7px 15px -1px rgba(8, 35, 43, 0.59);
+}
+
+#accordion li label {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #aa4b6b;
+    cursor: pointer;
+}
+
+#accordion li label span {
+    font-size: 1.2rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+#accordion input[type="radio"] {
+    display: none;
+}
+
+#accordion .content {
+    padding: 0 10px;
+    line-height: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#accordion li input[type="radio"]:checked~.content {
+    max-height: 10vh;
+}
+
+#accordion li input[type="radio"]:checked+label span {
+    transform: rotate(90deg);
+}
