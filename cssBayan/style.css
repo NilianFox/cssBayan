@@ -51,16 +51,7 @@ body {
 
 #accordion {
     margin: 10vh auto;
-    width: 60%;
-}
-
-#accordion:hover li label label {
-    color: #6b6b83;
-    scale: 101%;
-}
-
-#accordion:hover li label label span {
-    opacity: 1;
+    width: 70%;
 }
 
 #accordion li {
@@ -75,15 +66,6 @@ body {
     box-shadow: 9px 7px 15px -1px rgba(8, 35, 43, 0.59);
 }
 
-#accordion li:hover .content {
-    max-height: 60vh;
-}
-
-#accordion li:hover .content img {
-    opacity: 1;
-    max-height: 100%;
-    scale: 100%;
-}
 
 #accordion li label {
     cursor: pointer;
@@ -115,7 +97,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px;
+    padding: 0 1rem;
     line-height: 2rem;
     max-height: 0;
     transition: max-height 0.5s ease;
@@ -144,4 +126,25 @@ body {
     opacity: 1;
     max-height: 100%;
     scale: 100%;
+}
+
+@media (hover: hover) {
+    #accordion li:hover .content {
+        max-height: 60vh;
+    }
+
+    #accordion:hover li label label span {
+        opacity: 1;
+    }
+
+    #accordion li:hover .content img {
+        opacity: 1;
+        max-height: 100%;
+        scale: 100%;
+    }
+
+    #accordion:hover li label label {
+        color: #6b6b83;
+        scale: 101%;
+    }
 }
